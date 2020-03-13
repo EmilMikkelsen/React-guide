@@ -1,0 +1,33 @@
+.Cockpit {
+  background-color: #222;
+  /*height: 150px;*/
+  padding: 20px;
+  color: white;
+}
+
+.Cockpit-title {
+  font-size: 1.5em;
+}
+
+.red {
+  color: red;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.Cockpit .btn {
+  background-color: green;
+  font: inherit;
+  color: white;
+  border: 0;
+  padding: 8px;
+  cursor: pointer;
+  transition: .3s ease;
+}
+
+.Cockpit .btn:hover {
+  background-color: lightgreen;
+  color: #000;
+}
