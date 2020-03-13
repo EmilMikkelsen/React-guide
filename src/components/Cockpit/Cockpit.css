@@ -25,6 +25,7 @@
   padding: 8px;
   cursor: pointer;
   transition: .3s ease;
+  margin: 0 10px;
 }
 
 .Cockpit .btn:hover {
