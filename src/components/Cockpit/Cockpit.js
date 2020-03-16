@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useContext } from 'react';
-import classes from './Cockpit.css';
+import './Cockpit.css';
 import AuthContext from '../../context/auth-context';
 import authContext from '../../context/auth-context';
 
@@ -28,30 +28,36 @@ const cockpit = (props) => {
     };
   });
 
-    const assignedClasses = [];
-    if (props.personsLength <= 2) {
-      assignedClasses.push(classes.red); // classes = ['red']
-    }
-    if (props.personsLength <= 1) {
-      assignedClasses.push(classes.bold); // classes = ['red', 'bold']
-    }
+  const assignedClasses = [];
+  if (props.personsLength <= 2) {
+    assignedClasses.push('red'); // classes = ['red']
+  }
+  if (props.personsLength <= 1) {
+    assignedClasses.push('bold'); // classes = ['red', 'bold']
+  }
 
-    return(
-        <header className="Cockpit">
-            <h1 className="Cockpit-title">{props.title}</h1>
-            <button 
-              ref={toggleBtnRef}
-              className="btn" 
-              onClick={props.clicked}>
-                Toggle persons
-            </button>          
-                <button
-                  className="btn" 
-                  onClick={authContext.login}>
-                    Log in
-                </button>
-        </header>
-    );
+  const buttonClasses = ['btn'];
+  if (props.showPersons) {
+    buttonClasses.push('red-btn')
+  }
+
+  return(
+      <header className="Cockpit">
+          <h1 className="Cockpit-title">{props.title}</h1>
+          <p className={assignedClasses.join(' ')}>It's really WORKING!</p>
+          <button 
+            ref={toggleBtnRef}
+            className={buttonClasses.join(' ')}
+            onClick={props.clicked}>
+              Toggle persons
+          </button>          
+              <button
+                className="btn" 
+                onClick={authContext.login}>
+                  Log in
+              </button>
+      </header>
+  );
 }
 
 export default React.memo(cockpit);

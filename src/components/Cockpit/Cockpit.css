@@ -32,3 +32,11 @@
   background-color: lightgreen;
   color: #000;
 }
+
+.Cockpit .btn.red-btn {
+  background-color: red;
+}
+
+.Cockpit .btn.red-btn:hover {
+  background-color: pink;
+}
